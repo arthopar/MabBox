@@ -52,7 +52,10 @@ final class ViewModel: BaseViewModel {
             var tilesModel = [TilesModel]()
             tiles.forEach {
                 guard let urlString = $0.exportGeotiff else { return }
-                let model = TilesModel(url: urlString, sw: CLLocationCoordinate2D(latitude: flight.southWestLatitude, longitude: flight.southWestLongitude), ne: CLLocationCoordinate2D(latitude: flight.northEastLatitude, longitude: flight.northEastLongitude))
+                let components = urlString.split(separator: "/")
+                let base = components.dropLast(1).map(String.init).joined(separator: "/")
+                let template = "/{z}/{x}/{y}.png"
+                let model = TilesModel(url: "\(base)\(template)", sw: CLLocationCoordinate2D(latitude: flight.southWestLatitude, longitude: flight.southWestLongitude), ne: CLLocationCoordinate2D(latitude: flight.northEastLatitude, longitude: flight.northEastLongitude))
                 tilesModel.append(model)
             }
 
