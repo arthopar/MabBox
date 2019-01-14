@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad11_0rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ewe-A2-Qih">
+                                <rect key="frame" x="127" y="24" width="580" height="29"/>
+                                <segments>
+                                    <segment title="Layer 1"/>
+                                    <segment title="Layer 2"/>
+                                    <segment title="Layer 3"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeLayer:" destination="BYZ-38-t0r" eventType="valueChanged" id="zQ2-zp-NOW"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUd-Ui-Zgi" customClass="MGLMapView">
+                                <rect key="frame" x="0.0" y="60" width="834" height="1114"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/satellite-v9"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ewe-A2-Qih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="3zJ-4a-XfN"/>
+                            <constraint firstItem="KUd-Ui-Zgi" firstAttribute="top" secondItem="ewe-A2-Qih" secondAttribute="bottom" constant="8" id="AY2-df-c6Q"/>
+                            <constraint firstItem="KUd-Ui-Zgi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EfG-4y-kUg"/>
+                            <constraint firstItem="KUd-Ui-Zgi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l76-BM-j1R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ewe-A2-Qih" secondAttribute="trailing" constant="127" id="sCA-1J-lTQ"/>
+                            <constraint firstItem="KUd-Ui-Zgi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x3H-90-XJm"/>
+                            <constraint firstItem="ewe-A2-Qih" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yh5-na-jri"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="KUd-Ui-Zgi" id="NBt-iB-d3s"/>
+                        <outlet property="segmentedControl" destination="ewe-A2-Qih" id="gJB-CN-MO8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

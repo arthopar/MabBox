@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "4.7.1",
+  "iOS" : [
+    {
+      "name" : "Mapbox",
+      "hash" : "318ce3e69b47bef216ef61422a130cc304774408e622500d2cd8f7b4ca93b7e5"
+    }
+  ]
+}
